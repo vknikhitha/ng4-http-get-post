@@ -13,10 +13,11 @@ import 'rxjs/add/operator/map';
 export class AppComponent {
   title = 'Http in Angular';
   name: string = '';
-  //profiles: any;
+  profiles: any;
   found: boolean;
   reknown: string;
   params:object={
+    id:2,
     name:'xyz',
     shortname:'alphabet',
     reknown:'English',
@@ -42,7 +43,7 @@ constructor( private httpClient:HttpClient ){}
             this.reknown = data[0].reknown;
             this.found = true;
           }
-          //this.profiles = data;
+          this.profiles = data;
         }
     
       )
