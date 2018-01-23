@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { HttpParams } from '@angular/common/http/src/params';
+
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +16,13 @@ export class AppComponent {
   //profiles: any;
   found: boolean;
   reknown: string;
+  params:object={
+    id:2,
+    name:'xyz',
+    shortname:'alphabet',
+    reknown:'English',
+    bio:'Language'
+  }
 
 
 
@@ -38,5 +48,11 @@ constructor( private httpClient:HttpClient ){}
     
       )
   }
+
+postData(){
+  this.httpClient.post('https://my-json-server.typicode.com/vknikhitha/ng4-http-get-post/profiles/',this.params).subscribe((data:any)=>{
+    console.log(data);
+  })
+}
 
 }
