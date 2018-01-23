@@ -17,7 +17,6 @@ export class AppComponent {
   found: boolean;
   reknown: string;
   params:object={
-    id:2,
     name:'xyz',
     shortname:'alphabet',
     reknown:'English',
